@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1000;
+}
+
+.div1 {
+  background-image: url("../../assets/imgs/home/background1.webp");
+  background-size: cover;
+}
+
+@media (max-width: 600px) {
+  .div1 {
+    background-image: url("../../assets/imgs/home/background1mobile.webp");
+    background-repeat: no-repeat;
+  }
+}
