@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./@Index.module.css";
 import Navbar from "./Containers/1Navbar";
 import Section1 from "./Containers/Section1";
+import Section2Box from "./Containers/Section2Box";
 
 export default function Index() {
   return (
@@ -10,6 +11,7 @@ export default function Index() {
         <Navbar />
         <Section1 />
       </div>
+      <Section2Box />
     </main>
   );
 }
