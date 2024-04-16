@@ -12,11 +12,11 @@
   color: var(--color1);
   display: flex;
   align-items: center;
-  left: calc(30px * var(--factor));
+  left: calc(100px * var(--factor));
 }
 
 .logo h1 {
-  font-size: calc(62px * var(--factor));
+  font-size: calc(44px * var(--factor));
 }
 
 .logo img {
@@ -146,5 +146,11 @@
 
   .navMobile {
     display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    left: calc(10px * var(--factor));
   }
 }

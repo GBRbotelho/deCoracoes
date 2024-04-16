@@ -4,6 +4,7 @@ import Navbar from "./Containers/1Navbar";
 import Section1 from "./Containers/Section1";
 import Section2Box from "./Containers/Section2Box";
 import Section3 from "./Containers/Section3";
+import Section4Funcionamento from "./Containers/Section4Funcionamento";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       </div>
       <Section2Box />
       <Section3 />
+      <Section4Funcionamento />
     </main>
   );
 }
