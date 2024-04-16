@@ -8,7 +8,7 @@
 }
 
 .container {
-  margin: calc(200px * var(--factor)) 0;
+  margin: calc(100px * var(--factor)) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,6 @@
 
 .title h1 {
   font-size: calc(60px * var(--factor));
-  width: calc(600px * var(--factor));
   font-weight: 600;
   color: var(--color3);
 }

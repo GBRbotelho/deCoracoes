@@ -5,6 +5,7 @@ import Section1 from "./Containers/Section1";
 import Section2Box from "./Containers/Section2Box";
 import Section3 from "./Containers/Section3";
 import Section4Funcionamento from "./Containers/Section4Funcionamento";
+import Section5Fotos from "./Containers/Section5Fotos";
 
 export default function Index() {
   return (

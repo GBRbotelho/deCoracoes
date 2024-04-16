@@ -12,10 +12,3 @@
   background-image: url("../../assets/imgs/home/background1.webp");
   background-size: cover;
 }
-
-/* @media (max-width: 600px) {
-  .div1 {
-    background-image: url("../../assets/imgs/home/background1mobile.webp");
-    background-repeat: no-repeat;
-  }
-} */
