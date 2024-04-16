@@ -6,6 +6,7 @@ import Section2Box from "./Containers/Section2Box";
 import Section3 from "./Containers/Section3";
 import Section4Funcionamento from "./Containers/Section4Funcionamento";
 import Section5Fotos from "./Containers/Section5Fotos";
+import Section7Perguntas from "./Containers/Section7Perguntas";
 
 export default function Index() {
   return (
@@ -17,6 +18,7 @@ export default function Index() {
       <Section2Box />
       <Section3 />
       <Section4Funcionamento />
+      <Section7Perguntas />
     </main>
   );
 }
