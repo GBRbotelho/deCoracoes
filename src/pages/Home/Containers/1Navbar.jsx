@@ -20,8 +20,10 @@ export default function Navbar() {
           <li>kit avulsos</li>
           <li>planos</li>
         </ul>
-        <button>Consulta</button>
       </nav>
+      <div className={styles.button}>
+        <button>entrar</button>
+      </div>
       <nav className={styles.navMobile}>
         <button
           onClick={() => setDropdownOpen(!isDropdownOpen)}

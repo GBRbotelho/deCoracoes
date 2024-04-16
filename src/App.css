@@ -1,12 +1,10 @@
 html {
   --color1: #ffffff;
-  --color2: #285e40;
-  --color3: #4d8057;
-  --color4: #000000;
-  --color5: #f4b238;
-  --color6: #6eb122;
+  --color2: #cf2815;
+  --color3: #342313;
+  --color4: #fff7f7;
   --factor: 1;
-  --font1: "Popins", serif;
+  --font1: "Poppins", sans-serif;
 }
 
 img {
