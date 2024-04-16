@@ -24,3 +24,10 @@
   width: 100vw;
   height: 35vw;
 }
+
+@media (max-width: 1000px) {
+  .section{
+    display: none;
+  }
+}
+

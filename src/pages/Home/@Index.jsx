@@ -18,6 +18,7 @@ export default function Index() {
       <Section2Box />
       <Section3 />
       <Section4Funcionamento />
+      <Section5Fotos />
       <Section7Perguntas />
     </main>
   );
