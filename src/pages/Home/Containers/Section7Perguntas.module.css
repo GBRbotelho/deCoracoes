@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.title  {
+.title {
   font-size: calc(60px * var(--factor));
   font-weight: 700;
   color: var(--color3);
@@ -25,7 +25,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 .perguntas {
   display: flex;
@@ -85,7 +84,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #f4f4f4;
+  background-color: var(--color1);
   border-radius: calc(12px * var(--factor));
 }
 
@@ -96,14 +95,13 @@
   gap: calc(20px * var(--factor));
 }
 
-
-.titleCard{
+.titleCard {
   background-color: var(--color2);
   width: 100%;
   padding: calc(10px * var(--factor)) 0;
 }
 
-.titleCard h1{
+.titleCard h1 {
   color: var(--color1);
   font-size: 10px;
   font-size: calc(43px * var(--factor));
@@ -115,7 +113,7 @@
   width: 100%;
 }
 
-.iconBook img{
+.iconBook img {
   height: calc(350px * var(--factor));
 }
 
@@ -151,7 +149,6 @@
   font-weight: 700;
 }
 
-
 .preco span {
   font-size: calc(44px * var(--factor));
   font-weight: 800;
@@ -159,11 +156,12 @@
 
 .card button {
   color: var(--color4);
-  font-size: calc(27px * var(--factor));
+  font-size: calc(30px * var(--factor));
   font-weight: 600;
   background-color: var(--color2);
   padding: calc(20px * var(--factor)) 0;
   transition: 0.2s;
+  width: 100%;
 }
 
 .card button:hover {
@@ -176,7 +174,6 @@
   .container {
     flex-direction: column-reverse;
   }
-
 
   .ebook {
     justify-content: center;

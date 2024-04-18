@@ -9,6 +9,7 @@ import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Index from "./pages/Home/@Index";
+import Checkout from "./pages/Checkout/@Index";
 
 function App() {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <Route path="/" element={<Index />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Router>
   );

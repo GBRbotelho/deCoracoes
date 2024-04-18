@@ -10,9 +10,11 @@ import Plus from "../../../components/Home/Plus";
 import img1 from "../../../assets/imgs/Home/funcionamento1.webp";
 import Ok from "../../../components/Home/Ok";
 
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 
 export default function Section7Perguntas() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  initMercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -74,26 +76,25 @@ export default function Section7Perguntas() {
                 <div className={styles.card}>
                   <div className={styles.dataCard}>
                     <div className={styles.iconBook}>
-                    <div className={styles.titleCard}>
-                      <h1>Box inicial</h1>
-                    </div>
+                      <div className={styles.titleCard}>
+                        <h1>Box inicial</h1>
+                      </div>
                       <img src={img1} alt="Imagem" />
                     </div>
                     <ul>
                       <li>
-                        <Ok/>
-                        2 Lugares
+                        <Ok />2 Lugares
                       </li>
                       <li>
-                        <Ok/>
+                        <Ok />
                         porta-guardanapos
                       </li>
                       <li>
-                        <Ok/>
+                        <Ok />
                         lugar americano
                       </li>
                       <li>
-                        <Ok/>
+                        <Ok />
                         guardanapos 100% algodão
                       </li>
                     </ul>
@@ -106,7 +107,9 @@ export default function Section7Perguntas() {
                       </p>
                     </div>
                   </div>
-                  <button>Escolha essa box</button>
+                  <a href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c9380848eed4776018eee635e2600e1">
+                    <button>Escolha essa box</button>
+                  </a>
                 </div>
               </SwiperSlide>
             </Swiper>
