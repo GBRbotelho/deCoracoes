@@ -4,12 +4,11 @@ import { loadMercadoPago } from "@mercadopago/sdk-js";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-await loadMercadoPago();
-const mp = new window.MercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
+import Card from "./Card";
 
 export default function Section2() {
   initMercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
-  const [cont, setCont] = useState(1);
+  const [cont, setCont] = useState(0);
   const [state, setState] = useState({
     number: "",
     expiry: "",
@@ -31,6 +30,9 @@ export default function Section2() {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
+        <div className={styles.cardMP}>
+        <Card />
+        </div>
         {cont === 1 && (
           <div className={styles.formData}>
             <div>
@@ -63,6 +65,10 @@ export default function Section2() {
 
         {cont === 2 && (
           <div className={styles.formData}>
+            <div className={styles.titleForm}>
+              <h1>Passo 2:</h1>
+              <h1>cartão de credito</h1>
+            </div>
             <Cards
               number={state.number}
               expiry={state.expiry}

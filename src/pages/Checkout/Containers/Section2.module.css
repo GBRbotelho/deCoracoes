@@ -8,10 +8,14 @@
 }
 
 .content {
-  margin-top: calc(50px * var(--factor));
   display: flex;
   gap: calc(200px * var(--factor));
   margin-bottom: calc(100px * var(--factor));
+  height: min-content;
+}
+
+.cardMP {
+  width: calc(800px * var(--factor));
 }
 
 .form {
@@ -39,6 +43,10 @@
 }
 
 .formData h1 {
+  font-weight: 600;
+}
+
+.titleForm h1 {
   font-weight: 600;
 }
 
