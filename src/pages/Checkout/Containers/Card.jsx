@@ -1,28 +1,57 @@
 import React from "react";
 import "./Card.css";
 import { initMercadoPago } from "@mercadopago/sdk-react";
-initMercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
 import { CardPayment } from "@mercadopago/sdk-react";
 
-const customization = {
-  visual: {
-    texts: {
-      formTitle: "Pagamento com Cartão de Crédito",
-    },
-  },
-};
-
-export default function Card() {
+export default function Card({ state }) {
+  initMercadoPago("APP_USR-24094649-aec9-46b7-9e5b-6f6758fc1ede");
   const initialization = {
-    amount: 100,
-    paymentMethods: {
-      types: ["credit_card"], // Permitir apenas cartões de crédito
+    amount: 5,
+  };
+
+  const customization = {
+    visual: {
+      texts: {
+        formTitle: "Assinatura com Cartão de Crédito",
+      },
     },
-    installments: [2],
+    paymentMethods: {
+      minInstallments: 1,
+      maxInstallments: 1,
+      types: {
+        excluded: ["debit_card"],
+      },
+    },
   };
 
   const onSubmit = async (formData) => {
-    console.log(formData);
+    const dataSend = { ...formData, dataUser: state };
+    try {
+      // Defina a URL para a rota de criação de assinatura em seu servidor back-end
+      const url = "http://localhost:3000/create-subscription";
+
+      // Envie uma solicitação POST com os dados do formulário do cartão de crédito
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataSend), // Envie os dados do formulário como JSON
+      });
+
+      // Verifique se a resposta é bem-sucedida
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Assinatura criada com sucesso:", data);
+        return { success: true, data: data };
+      } else {
+        console.error("Erro ao criar assinatura:", response.statusText);
+        // Lide com o erro, por exemplo, exibindo uma mensagem de erro ao usuário
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      // Lide com o erro, por exemplo, exibindo uma mensagem de erro ao usuário
+    }
   };
 
   const onError = async (error) => {

@@ -8,14 +8,41 @@ import Card from "./Card";
 
 export default function Section2() {
   initMercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
-  const [cont, setCont] = useState(0);
+  const [cont, setCont] = useState(1);
   const [state, setState] = useState({
+    firstName: "",
+    lastName: "",
+    areaCode: "",
     number: "",
-    expiry: "",
-    cvc: "",
-    name: "",
-    focus: "",
+    streetName: "",
+    streetNumber: "",
+    bairro: "",
+    city: "",
+    nameState: "",
+    zipCode: "",
   });
+
+  const obj = {
+    dataUser: {
+      firstName: "Gabriel",
+      lastName: "Botelho",
+      areaCode: "19",
+      number: "996855849",
+      streetName: "Rua Guara",
+      streetNumber: 8,
+      city: { name: "Campinas" },
+      zipCode: "13053-341",
+    },
+    token: "4ca5c8d78a6f75f7ef170c7451f4fd8b",
+    issuer_id: "24",
+    payment_method_id: "master",
+    transaction_amount: 5,
+    installments: 1,
+    payer: {
+      email: "gabrielbbotelho05@gmail.com",
+      identification: { type: "CPF", number: "12345678909" },
+    },
+  };
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -23,118 +50,150 @@ export default function Section2() {
     setState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleInputFocus = (evt) => {
-    setState((prev) => ({ ...prev, focus: evt.target.name }));
-  };
-
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-        <div className={styles.cardMP}>
-        <Card />
-        </div>
         {cont === 1 && (
           <div className={styles.formData}>
             <div>
               <h1>Passo 1:</h1>
-              <h1>informações do Cliente</h1>
+              <h1>informações do cliente</h1>
             </div>
             <form>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Nome</label>
-                <input type="text" />
+              <h1>Dados de contato</h1>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Nome</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="firstName"
+                    value={state.firstName}
+                  />
+                </div>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Sobrenome</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="lastName"
+                    value={state.lastName}
+                  />
+                </div>
               </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">CPF</label>
-                <input type="text" />
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">DDD</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="areaCode"
+                    value={state.areaCode}
+                  />
+                </div>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Telefone</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="number"
+                    value={state.number}
+                  />
+                </div>
               </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">EMAIL</label>
-                <input type="text" />
+              <h1>Dados de endereço</h1>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Rua</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="streetName"
+                    value={state.streetName}
+                  />
+                </div>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Bairro</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="bairro"
+                    value={state.bairro}
+                  />
+                </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Nª da Residência</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="streetNumber"
+                    value={state.streetNumber}
+                  />
+                </div>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Cidade</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="city"
+                    value={state.city}
+                  />
+                </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Estado</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="nameState"
+                    value={state.nameState}
+                  />
+                </div>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">CEP</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="areacode"
+                    value={state.zipCode}
+                  />
+                </div>
               </div>
             </form>
-            <button
-              onClick={() => {
-                setCont(cont + 1);
-              }}
-            >
-              Proximo passo
-            </button>
+            <div>
+              <button
+                onClick={() => {
+                  setCont(cont + 1);
+                }}
+              >
+                Proximo passo
+              </button>
+            </div>
           </div>
         )}
-
         {cont === 2 && (
           <div className={styles.formData}>
-            <div className={styles.titleForm}>
+            <div>
               <h1>Passo 2:</h1>
-              <h1>cartão de credito</h1>
+              <h1>informações do pagamento</h1>
             </div>
-            <Cards
-              number={state.number}
-              expiry={state.expiry}
-              cvc={state.cvc}
-              name={state.name}
-              focused={state.focus}
-            />
-            <form className={styles.form}>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Numero do Cartão</label>
-                <input
-                  type="number"
-                  name="number"
-                  placeholder="Card Number"
-                  value={state.number}
-                  onChange={handleInputChange}
-                  onFocus={handleInputFocus}
-                />
-              </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Nome do cartão</label>
-                <input
-                  type="name"
-                  name="name"
-                  placeholder="Card name"
-                  value={state.name}
-                  onChange={handleInputChange}
-                  onFocus={handleInputFocus}
-                />
-              </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Expira</label>
-                <input
-                  type="expiry"
-                  name="expiry"
-                  placeholder="Card expiry"
-                  value={state.expiry}
-                  onChange={handleInputChange}
-                  onFocus={handleInputFocus}
-                />
-              </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">CVC</label>
-                <input
-                  type="cvc"
-                  name="cvc"
-                  placeholder="Card cvc"
-                  value={state.cvc}
-                  onChange={handleInputChange}
-                  onFocus={handleInputFocus}
-                />
-              </div>
-            </form>
-            <div className={styles.buttons}>
+            <div className={styles.cardMP}>
+              <Card state={state} />
+            </div>
+            <div>
               <button
                 onClick={() => {
                   setCont(cont - 1);
                 }}
               >
-                Anterior
+                Passo anterior
               </button>
-              <button>Proximo</button>
             </div>
           </div>
         )}
-
         <div className={styles.pedido}>
           <div className={styles.title}>
             <h1>Resumo da assinatura</h1>

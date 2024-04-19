@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Plus from "../../../components/Home/Plus";
+import { Link } from "react-router-dom";
 
 import img1 from "../../../assets/imgs/Home/funcionamento1.webp";
 import Ok from "../../../components/Home/Ok";
@@ -107,9 +108,9 @@ export default function Section7Perguntas() {
                       </p>
                     </div>
                   </div>
-                  <a href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c9380848eed4776018eee635e2600e1">
+                  <Link to={"/checkout"}>
                     <button>Escolha essa box</button>
-                  </a>
+                  </Link>
                 </div>
               </SwiperSlide>
             </Swiper>

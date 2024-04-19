@@ -1,7 +1,6 @@
 .section {
   display: flex;
   width: 100vw;
-  height: 100vh;
   align-items: flex-start;
   justify-content: center;
   background-color: #fff7f7;
@@ -12,53 +11,24 @@
   gap: calc(200px * var(--factor));
   margin-bottom: calc(100px * var(--factor));
   height: min-content;
+  background-color: #fff7f7;
 }
 
-.cardMP {
+.formData form {
   width: calc(800px * var(--factor));
 }
 
-.form {
+.line {
   display: flex;
-  flex-direction: column;
+  gap: calc(40px * var(--factor));
 }
 
-.formData {
-  background-color: var(--color1);
-  padding: calc(40px * var(--factor)) calc(40px * var(--factor));
-  border-radius: calc(16px * var(--factor));
-  display: flex;
-  flex-direction: column;
-  gap: calc(50px * var(--factor));
-}
-
-.pedido {
-  background-color: var(--color1);
-  padding: calc(40px * var(--factor)) calc(40px * var(--factor));
-  border-radius: calc(16px * var(--factor));
-  display: flex;
-  flex-direction: column;
-  gap: calc(50px * var(--factor));
-  height: min-content;
+.line div {
+  width: 100%;
 }
 
 .formData h1 {
   font-weight: 600;
-}
-
-.titleForm h1 {
-  font-weight: 600;
-}
-
-.inputLabel {
-  display: flex;
-  flex-direction: column;
-}
-
-.inputLabel input {
-  border: calc(4px * var(--factor)) solid var(--color3);
-  border-radius: calc(8px * var(--factor));
-  height: calc(40px * var(--factor));
 }
 
 .formData button {
@@ -71,11 +41,49 @@
   transition: 0.2s;
 }
 
+.inputLabel input {
+  border: calc(1px * var(--factor)) solid #827d7d;
+  border-radius: calc(8px * var(--factor));
+  height: calc(40px * var(--factor));
+}
+
 .formData button:hover {
   transform: scale(1.1);
   background-color: var(--color1);
   color: var(--color2);
   cursor: pointer;
+}
+
+.titleForm h1 {
+  font-weight: 600;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+}
+.formData {
+  background-color: var(--color1);
+  padding: calc(40px * var(--factor)) calc(40px * var(--factor));
+  border-radius: calc(16px * var(--factor));
+  display: flex;
+  flex-direction: column;
+  gap: calc(50px * var(--factor));
+}
+
+.cardMP {
+  width: calc(800px * var(--factor));
+  background-color: #fff7f7;
+}
+
+.pedido {
+  background-color: var(--color1);
+  padding: calc(40px * var(--factor)) calc(40px * var(--factor));
+  border-radius: calc(16px * var(--factor));
+  display: flex;
+  flex-direction: column;
+  gap: calc(50px * var(--factor));
+  height: min-content;
 }
 
 .title {
@@ -116,4 +124,33 @@
 }
 
 @media (max-width: 1040px) {
+  .content {
+    gap: calc(100px * var(--factor));
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 500px) {
+  .cardMP {
+    width: 90vw;
+  }
+
+  .formData form {
+    width: 90vw;
+  }
+
+  .line {
+    flex-direction: column;
+    gap: calc(0px * var(--factor));
+  }
+
+  .image {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
 }
